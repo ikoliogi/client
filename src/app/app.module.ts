@@ -16,7 +16,8 @@ import { HomeComponent } from './components/home/home.component';
 import {AgmCoreModule} from '@agm/core';
 import { FooterComponent } from './components/footer/footer.component';
 import { NewarrivalsComponent } from './components/newarrivals/newarrivals.component';
-
+import { NgxWebstorageModule } from 'ngx-webstorage';
+import { CartComponent } from './components/cart/cart.component';
 
 
 
@@ -36,6 +37,10 @@ const routes = [
   {
     path: 'contact',
     component: ContactComponent
+  },
+  {
+    path: 'cart',
+    component: CartComponent
   }
 ];
 
@@ -49,7 +54,8 @@ const routes = [
     ContactComponent,
     HomeComponent,
     FooterComponent,
-    NewarrivalsComponent
+    NewarrivalsComponent,
+    CartComponent
 
   ],
   imports: [
@@ -59,6 +65,7 @@ const routes = [
     BrowserAnimationsModule,
     GalleryModule,
     RouterModule.forRoot(routes),
+    NgxWebstorageModule.forRoot(),
     AgmCoreModule.forRoot({
       apiKey: ''
     })
